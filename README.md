@@ -1,5 +1,5 @@
 # Cider_apple_style_lyrics_transition
-Smooth lyrics transition like Apple Music in Cider
+Smooth lyrics transition like in Apple Music
 
 
 ![lyrics fullscreen](https://user-images.githubusercontent.com/101460787/178795332-9b5cdaf7-a980-490c-be4f-aaaf20b18e18.jpg)
