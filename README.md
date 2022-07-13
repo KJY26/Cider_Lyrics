@@ -1,4 +1,4 @@
-# Apple Music Style lirycs
+# Apple Music Style lyrics
 Smooth lyrics transition like in Apple Music
 
 
