@@ -1,4 +1,4 @@
-# Cider_apple_style_lyrics_transition
+# Apple Music Style lirycs
 Smooth lyrics transition like in Apple Music
 
 
