@@ -1,0 +1,89 @@
+@panelBorder    : rgba(68, 68, 68, 0.4) 1px solid;
+@mainPanelColor : rgba(31, 31, 31, 0.6);
+
+#app {
+
+    &:not(.modular-fs) {
+        .app-drawer {
+            border-radius: 0px;
+            bottom       : 0;
+            right        : 0;
+            top          : calc(var(--chromeHeight1) /2);
+            height       : calc(100% - var(--chromeHeight1)) !important;
+            box-shadow   : unset;
+            border-top   : @panelBorder;
+            border-bottom: @panelBorder;
+            border-left  : @panelBorder;
+            background   : @mainPanelColor;
+            margin-right : 0px;
+            position     : relative;
+
+            .lyric-line {
+                margin-block-start: 30px;
+
+                &:not(.active) {
+                    transform: scale(1);
+                    filter: blur(0.5px) opacity(0.4);
+                    padding-block-start: 10px;
+                }
+
+                &.active {
+                    opacity         : 1;
+                    backdrop-filter : blur(0px);
+                    transform       : scale(1);
+                    transform-origin: left center;
+                    transition      : all 0.5s var(--appleEase);
+                }
+            }
+        }
+
+        .drawertransition-enter-active,
+        .drawertransition-leave-active {
+            transition: margin .25s var(--appleEase), opacity .25s var(--appleEase);
+        }
+
+        .drawertransition-enter,
+        .drawertransition-leave-to {
+            margin-right: -300px;
+        }
+    }
+}
+#app.twopanel{
+    &:not(.modular-fs) {
+        .app-drawer {
+            bottom       : calc(var(--chromeHeight2));
+            top          : calc(var(--chromeHeight1) * 1.5 - var(--chromeHeight2)) !important;
+            height       : calc(100% - var(--chromeHeight1) - var(--chromeHeight2)) !important;
+        }
+    }
+}
+
+
+.fullscreen-view-container{
+    .fullscreen-view{
+        .lyrics-col{
+            width:100%;
+            margin-top: 100px;
+            .lyric-body{
+                width:100%;
+            }
+        }
+        .lyric-line{
+            font-size: 55px;
+            margin-right: 20px;
+            margin-left: 0px;
+            margin-block-start: 50px;
+
+            &:not(.active) {
+                transform: scale(1);
+                filter: blur(1.5px) opacity(0.4);
+                padding-block-start: 10px;
+            }
+            
+            &.active{
+                transform: scale(1);
+                transition: all 0.5s var(--appleEase);
+            }
+        }
+    }
+}
