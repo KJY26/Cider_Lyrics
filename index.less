@@ -28,11 +28,12 @@
                 }
 
                 &.active {
-                    opacity         : 1;
+                    opacity         : 1.5;
                     backdrop-filter : blur(0px);
                     transform       : scale(1);
                     transform-origin: left center;
                     transition      : all 0.5s var(--appleEase);
+                    //padding-top: 5px;
                 }
             }
         }
@@ -83,7 +84,58 @@
             &.active{
                 transform: scale(1);
                 transition: all 0.5s var(--appleEase);
+                padding-top: 10px;
             }
         }
     }
+}
+
+
+.fullscreen-view .artwork-col .app-playback-controls .song-progress {
+    bottom  : -4px;
+    right   : 1px;
+    left    : 2.5px;
+    z-index : 30;
+    overflow: hidden;
+
+    input[type="range"] {
+        border-radius: 0px;
+
+        &::-webkit-slider-thumb {
+            border-radius: 3px;
+            width        : 7px;
+            height       : 15px;
+            border       : #333 solid 1px;
+            background   : #b8b8b8;
+        }
+    }
+
+    .song-duration {
+        margin-left : -1px;
+        margin-right: 6px;
+        margin-bottom: 4px;
+    }
+}
+
+
+.fullscreen-view .tab-toggles div {
+    width        : 5vh;
+    height       : 5vh;
+    padding      : 1.6vh;
+    margin-bottom: 100px;
+    border-radius: 5px;
+
+    &.active {
+        background-color:  rgba(200, 200, 200, 0.15);
+    }
+}
+
+.fullscreen-view .tab-toggles div:hover {
+    background-color   : var(--selected);
+    transition-duration: 0.2s;
+}
+
+.fullscreen-view .tab-toggles {
+    bottom: 2vh;
+    right : 2vh;
 }
