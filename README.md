@@ -2,5 +2,5 @@
 Smooth lyrics transition like in Apple Music
 
 
-![lyrics fullscreen](https://user-images.githubusercontent.com/101460787/178795332-9b5cdaf7-a980-490c-be4f-aaaf20b18e18.jpg)
-![lyrics](https://user-images.githubusercontent.com/101460787/178795324-d6254963-ecf3-4a1b-b699-bed903a36772.jpg)
+![lyrics fullscreen2](https://user-images.githubusercontent.com/101460787/182229571-cea1aca2-ed92-402c-ac41-ad33ff0fc060.jpg)
+![lyrics2](https://user-images.githubusercontent.com/101460787/182229587-a6c0b160-249c-4df7-8f39-9e34c1840032.jpg)
