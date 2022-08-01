@@ -25,21 +25,23 @@
             }
             .lyric-line {
                 margin-block-start: 20px;
-                //padding-block: 5px;
+                filter: blur(1.5px) opacity(0.4);
 
                 &:not(.active) {
                     transform: scale(0.9);
-                    filter: blur(1.5px) opacity(0.4);
+                    //filter: blur(1.5px) opacity(0.4);
                     padding-block: 5px;
+                    transition      : all 0s var(--appleEase);
                 }
 
                 &.active {
-                    opacity         : 1.5;
-                    backdrop-filter : blur(0px);
+                    //opacity         : 1.5;
+                    //backdrop-filter : blur(0px);
+                    filter:blur(0px) opacity(1.5);
                     transform       : scale(1);
                     transform-origin: left center;
                     transition      : all 0.5s var(--appleEase);
-                    //padding-top: 5px;
+                    position: sticky;
                 }
             }
         }
@@ -73,7 +75,7 @@
             margin-top: 120px;
             .lyric-body{
                 width:100%;
-                padding-block-start: 200px;
+                padding-block-start: 100px;
                 padding-block-end: 400px;
             }
         }
@@ -82,24 +84,87 @@
             margin-right: 20px;
             margin-left: 0px;
             margin-block-start: 50px;
-            //padding-block: 15px;
 
             &:not(.active) {
+                position: relative;
                 transform: scale(1);
                 filter: blur(0.5px) opacity(0.4);
                 padding-block-end: 10px;
             }
             
             &.active{
+                position: sticky;
                 transform: scale(1);
-                transition: all 0.5s var(--appleEase);
+                transition: all 0.6s var(--appleEase);
             }
         }
     }
 }
 
 
+.fullscreen-view .artwork-col .app-playback-controls{
+    .playback-info{
+        .song-progress {
+            bottom  : 40px;
+            //right   : 1px;
+            //left    : 2.5px;
+            z-index : 30;
+            overflow: hidden;
 
+            input[type="range"] {
+                width: 500px;
+                border-radius: 5px;
+                &::-webkit-slider-thumb {
+                    border-radius: 3px;
+                    width        : 6px;
+                    height       : 14px;
+                    border       : rgb(95, 95, 95) solid 1px;
+                    background   : #b8b8b8;
+                    margin-top   : -5px;
+                }
+                &::-webkit-slider-runnable-track {
+                    background-color: rgba(200, 200, 200, 0.2);
+                    height: 4px;
+                }
+            }
+            .song-duration {
+                color: rgb(200, 200, 200, 1);
+                margin-left : 18px;
+                margin-right: 22px;
+                margin-bottom: 6px;
+            }
+        }
+    }
+}
+
+
+.fullscreen-view .artwork-col .app-playback-controls .playback-info{
+    background-color: unset;
+    top: 55px;
+}
+
+.fullscreen-view .artwork-col .app-playback-controls .song-name{
+    font-size: 14px;
+}
+
+.fullscreen-view .artwork-col .app-playback-controls .song-artist{
+    margin-top: 1px;
+    font-size: 13px;
+    color:  rgb(200, 200, 200, 1);
+}
+
+.fullscreen-view .artwork-col .volume {
+    margin-top: 500px;
+    position: absolute;
+}
+
+.fullscreen-view .artwork-col .playback-button{
+    top: 30px;
+}
+
+.fullscreen-view .artwork-col .playback-button--small{
+    top: 500px;
+}
 
 .fullscreen-view .tab-toggles div {
     width        : 5vh;
