@@ -1,5 +1,5 @@
 # Apple Music Style lyrics
-Smooth lyrics transition and better fullscreen
+Smooth lyrics transition and new fullscreen
 
 best used with itheme
 
