@@ -1,7 +1,6 @@
 # Apple Music Style lyrics
-Smooth lyrics transition and new fullscreen
+Smooth lyrics transition and new fullscreen UI
 
-best used with itheme
 
 
 ![lyrics fullscreen3](https://user-images.githubusercontent.com/101460787/184546026-9dd34b3f-f2ca-4a78-bc3e-c337264dfc97.jpg)
