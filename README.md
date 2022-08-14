@@ -1,5 +1,6 @@
 # Apple Music Style lyrics
 Smooth lyrics transition and new fullscreen UI
+(May not work at resolutions other than 1920x1080)
 
 
 
