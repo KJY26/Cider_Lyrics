@@ -4,5 +4,5 @@ Smooth lyrics transition and new fullscreen
 best used with itheme
 
 
-![lyrics fullscreen2](https://user-images.githubusercontent.com/101460787/182229571-cea1aca2-ed92-402c-ac41-ad33ff0fc060.jpg)
+![lyrics fullscreen3](https://user-images.githubusercontent.com/101460787/184546026-9dd34b3f-f2ca-4a78-bc3e-c337264dfc97.jpg)
 ![lyrics2](https://user-images.githubusercontent.com/101460787/182229587-a6c0b160-249c-4df7-8f39-9e34c1840032.jpg)
