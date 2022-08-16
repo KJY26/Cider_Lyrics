@@ -21,7 +21,7 @@
             .lyric-body{
                 margin-top: -50px;
                 padding-block-start: 121px;
-                padding-block-end: 970px;
+                padding-block-end: 950px;
                 margin-left: -5px;
                 margin-right: -5px;
             }
@@ -31,16 +31,16 @@
 
                 &:not(.active) {
                     transform: scale(0.9);
-                    transition: transform 0.5s var(--appleEase);
-                    padding-block: 13px;
+                    transition: transform 0.5s ease-out;
+                    padding-block-start: 11px;
+                    padding-block-end: 13px;
                 }
-
 
                 &.active {
                     transform       : scale(1);
                     filter:blur(0px) opacity(1.5);
                     transform-origin: left bottom;
-                    transition      : all 0.5s var(--appleEase);
+                    transition      : all 0.5s var(--appleEase), transform 0.5s ease-out;
                     padding-block: 8px;
                 }
             }
