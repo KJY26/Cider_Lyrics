@@ -27,7 +27,7 @@
             }
             .lyric-line {
                 margin-block-start: 10px;
-                filter: blur(1.5px) opacity(0.4);
+                filter: blur(1.0px) opacity(0.4);
 
                 &:not(.active) {
                     transform: scale(0.9);
@@ -46,6 +46,7 @@
             }
         }
 
+        
         .drawertransition-enter-active,
         .drawertransition-leave-active {
             transition: margin .25s var(--appleEase), opacity .25s var(--appleEase);
@@ -69,6 +70,7 @@
         }
     }
 }
+
 
 .fullscreen-view-container{
     .fullscreen-view{
@@ -100,6 +102,7 @@
                 transition: all 0.5s var(--appleEase);
                 padding-block: 10px;
             }
+
         }
     }
 }
@@ -119,61 +122,43 @@
                 border-radius: 5px;
                 &::-webkit-slider-thumb {
                     border-radius: 3px;
-                    width        : 6px;
+                    width        : 5px;
                     height       : 14px;
                     border       : rgb(120, 120, 120) solid 1px;
-                    background   : #b8b8b8;
-                    margin-top   : -4px;
+                    background   : #bbbbbb;
+                    margin-top   : -5px;
                 }
                 &::-webkit-slider-runnable-track {
-                    background-color: rgba(190, 190, 190, 0.2);
+                    //background-color: rgba(190, 190, 190, 0.2);
                     height: 5px;
                     border-radius: 3px;
                 }
             }
             .song-duration {
                 opacity: 0.8;
-                margin-left : 18px;
-                margin-right: 22px;
-                margin-bottom: 6px;
+                //margin-left : 18px;
+                //margin-right: 22px;
+                margin-left: 33px;
+                margin-bottom: 10px;
+                width: 470px;
+                scale: 1.06;
             }
         }
     }
 }
-
 
 .fullscreen-view .artwork-col .app-playback-controls .playback-info{
     background-color: unset;
     top: 60px;
 }
 
-.fullscreen-view .artwork-col .app-playback-controls .song-artist{
-    font-size: 10px;
-}
-
 .fullscreen-view .artwork-col .volume {
-    margin-top: 500px;
-    position: absolute;
+    display: none;
 }
 
 .fullscreen-view .artwork-col .playback-button--small{
-    top: 500px;
+    display: none;
 }
-
-.fullscreen-view .tab-toggles div {
-    width        : 5vh;
-    height       : 5vh;
-    padding      : 1.6vh;
-    //margin-bottom: 100px;
-    border-radius: 5px;
-    z-index: 30;
-}
-
-.fullscreen-view .tab-toggles div:hover {
-    //background-color   : var(--selected);
-    transition-duration: 0.2s;
-}
-
 
 &.modular-fs {
     #app-sidebar {
@@ -215,7 +200,6 @@
     }
 }
 
-
 .content-inner{
     .cd-mediaitem-square:not(.mediaitem-card) {
         .artwork-container{
@@ -232,7 +216,6 @@
         }
     }
 }
-
 
 
 .fullscreen-view-container {
@@ -264,9 +247,9 @@
             color: var(--textColorLight);
 
             .song-progress {
-                --mediaBarColor         : rgba(255, 255, 255, 0.1);
-                --songProgressColor     : #b8b8b8;
-                --songProgressBackground: rgba(255, 255, 255, 0.1);
+                --mediaBarColor         : rgba(255, 255, 255, 0.2);
+                --songProgressColor     : #bbbbbb;
+                --songProgressBackground: rgba(255, 255, 255, 0.2);
             }
         }
 
@@ -286,38 +269,35 @@
                         opacity: 0;
                         transition: opacity 0.2s var(--appleEase);
                     }
-
                 }
 
                 .song-name {
                     opacity: 1;
-                    transition: opacity 0.3s 1s var(--appleEase);
+                    transition: opacity 0.2s 1.5s var(--appleEase);
                     font-size    : 14px;
                     font-weight  : bold;
                     color        : var(--textColorLight);
-                    margin-bottom: -7px;
+                    margin-top: 10px;
                 }
 
                 .song-artist {
                     opacity  : 0.8;
-                    transition: opacity 0.3s 1s var(--appleEase);
-                    font-size: 13px;
+                    transition: opacity 0.2s 1.5s var(--appleEase);
+                    font-size: 12px;
                     color    : var(--textColorLight);
-                    margin-bottom: -7px;
+                    //margin-top: 7px;
                 }
 
                 .song-progress {
-                    input {
-                        border-radius: 1rem;
-                    }
+                    padding-bottom: 1vh;
                 }
 
                 .control-buttons div{
                     position: relative;
                     opacity   : 0;
-                    transition: opacity 0.3s 1s var(--appleEase);
+                    transition: opacity 0.2s 1.5s var(--appleEase);
                     z-index: 30;
-                    margin-top: 5px;
+                    //margin-top: 5px;
                 }
             }
         }
@@ -360,7 +340,7 @@
         }
 
         .tab-toggles{
-            position: fixed;
+            //position: fixed;
             bottom: unset;
             top   : 52rem;
             right : 47.5rem;
@@ -370,10 +350,12 @@
             .lyrics,
             .queue {
                 z-index: 30;
-                opacity: 0.6;
+                opacity: 0.7;
+                border-radius: 5px;
+                transition-duration: 0.2s;
                 
                 &:hover{
-                    opacity: 0.4;
+                    opacity: 0.5;
                 }
 
                 &.active {
