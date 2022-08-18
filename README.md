@@ -12,3 +12,4 @@ Full screen lyrics
 Apple Style inline drawer
 
 ![lyrics2](https://user-images.githubusercontent.com/101460787/185416125-39bf619a-8d91-4269-bf9d-1d39fbac7f53.jpg)
+![lyrics3](https://user-images.githubusercontent.com/101460787/185434049-f566b8f0-e011-4cd3-861d-3f6d0c8aa2b0.jpg)
