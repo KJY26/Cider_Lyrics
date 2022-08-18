@@ -45,7 +45,6 @@
                 }
             }
         }
-
         
         .drawertransition-enter-active,
         .drawertransition-leave-active {
@@ -88,21 +87,20 @@
             margin-right: 20px;
             margin-left: 20px;
             margin-block-start: 30px;
+            filter: blur(0.5px) opacity(0.4);
 
             &:not(.active) {
                 transform: scale(1);
-                filter: blur(0.5px) opacity(0.4);
                 padding-block-start: 10px;
                 padding-block-end: 20px;
             }
-            
+
             &.active{
                 transform: scale(1);
                 filter: none;
                 transition: all 0.5s var(--appleEase);
                 padding-block: 10px;
             }
-
         }
     }
 }
@@ -162,8 +160,7 @@
 
 &.modular-fs {
     #app-sidebar {
-        position: fixed;
-        top: -100%;
+        display: none;
     }
     .app-chrome:not(.chrome-bottom) {
         .app-chrome--left > div:nth-of-type(3) {
@@ -193,6 +190,10 @@
             justify-content: center;
         }
     }
+    
+    .lyricWaiting{
+        color: var(--textColorLight) !important;
+    }
 
     .lyric-footer {
         background-color: transparent !important;
@@ -206,17 +207,16 @@
             &:hover {
                 .artwork{
                     transition: filter 0.2s var(--appleEase);
-                    filter:     brightness(0.8)
+                    filter:     brightness(0.8);
                 }
             }
             .artwork{
                 transition: filter 0.2s var(--appleEase);
-                filter:     brightness(1)
+                filter:     brightness(1);
             }
         }
     }
 }
-
 
 .fullscreen-view-container {
     .fullscreen-view {
@@ -257,6 +257,7 @@
             .mediaitem-artwork {
                 border-radius: 1rem;
                 box-shadow   : 0px 0px 25px rgba(0, 0, 0, 0.3);
+                filter: brightness(95%) saturate(110%) contrast(1.2);
             }
 
             .controls-parents {
@@ -274,8 +275,8 @@
                 .song-name {
                     opacity: 1;
                     transition: opacity 0.2s 1.5s var(--appleEase);
-                    font-size    : 14px;
-                    font-weight  : bold;
+                    font-size    : 15px;
+                    //font-weight  : bold;
                     color        : var(--textColorLight);
                     margin-top: 10px;
                 }
@@ -283,7 +284,7 @@
                 .song-artist {
                     opacity  : 0.8;
                     transition: opacity 0.2s 1.5s var(--appleEase);
-                    font-size: 12px;
+                    font-size: 13px;
                     color    : var(--textColorLight);
                     //margin-top: 7px;
                 }
@@ -340,10 +341,9 @@
         }
 
         .tab-toggles{
-            //position: fixed;
             bottom: unset;
             top   : 52rem;
-            right : 47.5rem;
+            right: 47.5rem;
             width: 85rem;
             z-index: 15;
 
@@ -361,8 +361,39 @@
                 &.active {
                     background-color: rgba(0, 0, 0, 1) !important;
                     filter          : invert(1) brightness(1) !important;
-                }
+                }      
             }
         }
     }
+}
+
+.fullscreen-view .background .bgArtworkMaterial .bg-artwork-container .bg-artwork{
+    filter: brightness(70%) saturate(180%) blur(180px) contrast(1.2) opacity(0.9);
+}
+
+.fullscreen-view .background .bgArtworkMaterial .bg-artwork-container .bg-artwork.a{
+    //animation-direction: alternate;
+    animation-delay: 0s;
+    animation-duration: 50s;
+}
+.fullscreen-view .background .bgArtworkMaterial .bg-artwork-container .bg-artwork.b{
+    animation-delay: 0s;
+    animation-direction: alternate;
+    animation-duration: 35s;
+}
+
+
+.app-drawer .bgArtworkMaterial .bg-artwork-container .bg-artwork{
+    filter: brightness(70%) saturate(180%) blur(180px) contrast(1.2) opacity(0.9);
+}
+
+.app-drawer .bgArtworkMaterial .bg-artwork-container .bg-artwork.a{
+    //animation-direction: alternate;
+    animation-delay: 0s;
+    animation-duration: 50s;
+}
+.app-drawer .bgArtworkMaterial .bg-artwork-container .bg-artwork.b{
+    animation-delay: 0s;
+    animation-direction: alternate;
+    animation-duration: 35s;
 }
