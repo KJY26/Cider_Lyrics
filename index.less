@@ -30,18 +30,18 @@
                 filter: blur(1.0px) opacity(0.4);
 
                 &:not(.active) {
-                    transform: scale(0.9);
-                    transition: transform 0.5s ease-out;
-                    padding-block-start: 11px;
-                    padding-block-end: 13px;
+                    transform: scale(0.95);
+                    transition: transform 0.4s ease-out;
+                    padding-block-start: 10px;
+                    padding-block-end: 12px;
                 }
 
                 &.active {
                     transform       : scale(1);
                     filter:blur(0px) opacity(1.5);
                     transform-origin: left bottom;
-                    transition      : all 0.5s var(--appleEase), transform 0.5s ease-out;
-                    padding-block: 8px;
+                    transition      : all 0.5s var(--appleEase), transform 0.4s ease-out;
+                    padding-block: 7px;
                 }
             }
         }
@@ -91,8 +91,8 @@
 
             &:not(.active) {
                 transform: scale(1);
-                padding-block-start: 10px;
-                padding-block-end: 20px;
+                padding-block-start: 13px;
+                padding-block-end: 18px;
             }
 
             &.active{
@@ -101,6 +101,7 @@
                 transition: all 0.5s var(--appleEase);
                 padding-block: 10px;
             }
+            
         }
     }
 }
@@ -123,7 +124,7 @@
                     width        : 5px;
                     height       : 14px;
                     border       : rgb(120, 120, 120) solid 1px;
-                    background   : #bbbbbb;
+                    background   : #cccccc;
                     margin-top   : -5px;
                 }
                 &::-webkit-slider-runnable-track {
@@ -201,6 +202,14 @@
     }
 }
 
+// .mediaitem-artwork {
+//     &:hover {
+//         transition: filter 0.2s var(--appleEase);
+//         filter:     brightness(0.8);
+//     }
+//     transition: filter 0.2s var(--appleEase);
+// }
+
 .content-inner{
     .cd-mediaitem-square:not(.mediaitem-card) {
         .artwork-container{
@@ -212,7 +221,6 @@
             }
             .artwork{
                 transition: filter 0.2s var(--appleEase);
-                filter:     brightness(1);
             }
         }
     }
@@ -248,16 +256,19 @@
 
             .song-progress {
                 --mediaBarColor         : rgba(255, 255, 255, 0.2);
-                --songProgressColor     : #bbbbbb;
+                --songProgressColor     : #cccccc;
                 --songProgressBackground: rgba(255, 255, 255, 0.2);
             }
         }
 
         .artwork-col {
-            .mediaitem-artwork {
+            .mediaitem-artwork{
                 border-radius: 1rem;
                 box-shadow   : 0px 0px 25px rgba(0, 0, 0, 0.3);
                 filter: brightness(95%) saturate(110%) contrast(1.2);
+            }
+            .mediaitem-artwork img{
+                // object-fit: contain;
             }
 
             .controls-parents {
@@ -365,35 +376,4 @@
             }
         }
     }
-}
-
-.fullscreen-view .background .bgArtworkMaterial .bg-artwork-container .bg-artwork{
-    filter: brightness(70%) saturate(180%) blur(180px) contrast(1.2) opacity(0.9);
-}
-
-.fullscreen-view .background .bgArtworkMaterial .bg-artwork-container .bg-artwork.a{
-    //animation-direction: alternate;
-    animation-delay: 0s;
-    animation-duration: 50s;
-}
-.fullscreen-view .background .bgArtworkMaterial .bg-artwork-container .bg-artwork.b{
-    animation-delay: 0s;
-    animation-direction: alternate;
-    animation-duration: 35s;
-}
-
-
-.app-drawer .bgArtworkMaterial .bg-artwork-container .bg-artwork{
-    filter: brightness(70%) saturate(180%) blur(180px) contrast(1.2) opacity(0.9);
-}
-
-.app-drawer .bgArtworkMaterial .bg-artwork-container .bg-artwork.a{
-    //animation-direction: alternate;
-    animation-delay: 0s;
-    animation-duration: 50s;
-}
-.app-drawer .bgArtworkMaterial .bg-artwork-container .bg-artwork.b{
-    animation-delay: 0s;
-    animation-direction: alternate;
-    animation-duration: 35s;
 }
