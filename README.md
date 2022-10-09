@@ -4,12 +4,11 @@ Smooth lyrics transition and new fullscreen UI
 (May not work at resolutions other than 1920x1080)
 
 New full screen UI
-![lyrics fullscreen5](https://user-images.githubusercontent.com/101460787/185414341-0aa183ec-43f5-4da3-a505-f6d7efb2d9ef.jpg)
+![lyrics fullscreen6](https://user-images.githubusercontent.com/101460787/194754227-1aa2acf6-13b0-49c3-b147-3de8e6e99de1.jpg)
 
 Full screen lyrics
-![lyrics fullscreen_full2](https://user-images.githubusercontent.com/101460787/185416029-2f51f484-0789-4ddb-b1a8-e0923728cad4.jpg)
+![lyrics fullscreen_full3](https://user-images.githubusercontent.com/101460787/194754245-db2973bf-c820-41f0-8645-ce2985d2e21d.jpg)
 
 Apple Style inline drawer
 
-![lyrics2](https://user-images.githubusercontent.com/101460787/185416125-39bf619a-8d91-4269-bf9d-1d39fbac7f53.jpg)
-![lyrics3](https://user-images.githubusercontent.com/101460787/185434049-f566b8f0-e011-4cd3-861d-3f6d0c8aa2b0.jpg)
+![lyrics4](https://user-images.githubusercontent.com/101460787/194754259-c7548169-e90f-4428-b75b-d0828052418a.jpg)
