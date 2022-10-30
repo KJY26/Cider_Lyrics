@@ -91,7 +91,7 @@
 .fullscreen-view-container{
     .fullscreen-view{
         .lyrics-col{
-            width:100%;
+            width:80%;
             margin-top: 100px;
             .lyric-body{
                 width: 100%;
@@ -122,6 +122,8 @@
             margin-block: 10px;
             transform: scale(1);
             filter: opacity(0.5);
+            word-break: keep-all;
+            word-wrap: normal;
 
             .lyricWaiting{
                 margin-block: 0px !important;
@@ -265,14 +267,30 @@
                 display: none;
             }
 
+            .artwork{
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                align-items: center;
+            }
             .mediaitem-artwork{
                 border-radius: 10px;
                 box-shadow   : 0px 0px 25px rgba(0, 0, 0, 0.3);
+                width: auto;
+                height: auto;
+                max-width: 50vh;
+                max-height: 50vh;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                align-items: center;
             }
             .mediaitem-artwork img{
-                object-fit: contain;
-                background-image: none;
-                filter: brightness(95%) saturate(110%) contrast(1.2);
+                height:fit-content;
+                width: fit-content;
+                max-width: 50vh;
+                max-height: 50vh;
+                filter: brightness(0.95) saturate(1.1) contrast(1.2);
             }
 
             &{
