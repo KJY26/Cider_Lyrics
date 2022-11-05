@@ -92,11 +92,11 @@
     .fullscreen-view{
         .lyrics-col{
             width:80%;
-            margin-top: 100px;
+            margin-top: 90px;
             .lyric-body{
                 width: 100%;
-                height: 110%;
-                padding-block-start: 120px;
+                height: 115%;
+                padding-block-start: 150px;
                 padding-block-end: 550px;
                 -webkit-mask-image: linear-gradient(to bottom, transparent 13%,black 17%, black 40%,transparent 100%);
             }
@@ -307,6 +307,11 @@
                         opacity: 0.8 !important;
                         transition: opacity 0.2s var(--appleEase);
                     }
+                    .song-progress>input[type="range"]::-webkit-slider-thumb{
+                        opacity: 1;
+                        transition: opacity 0.2s var(--appleEase);
+                        height       : 14px;
+                    }
                 }
 
                 .song-name {
@@ -315,6 +320,11 @@
                     font-size    : 15px;
                     color        : var(--textColorLight);
                     margin-top: 10px;
+                    max-width: 400px;
+                    -webkit-line-clamp: 1;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    display: 'webkit-box';
                 }
 
                 .song-artist {
@@ -322,6 +332,7 @@
                     transition: opacity 0.2s 2.5s var(--appleEase);
                     font-size: 14px;
                     color    : var(--textColorLight);
+                    max-width: 400px;
                 }
 
                 .control-buttons div{
@@ -343,12 +354,16 @@
                         width: 500px;
                         height: 4px;
                         border-radius: 2px;
-                        &::-webkit-slider-thumb {
-                            border-radius: 3px;
-                            width        : 5px;
-                            height       : 14px;
-                            border       : rgb(120, 120, 120) solid 1px;
+                        &::-webkit-slider-thumb{
+                            opacity: 0;
+                            transition: opacity 0.2s 2.5s var(--appleEase), height 0.2s 2.5s var(--appleEase);
+                            transform: none !important;
+                            border-radius: 2px;
+                            width        : 4px;
+                            height       : 0px;
+                            border       : rgba(120, 120, 120, 0.8) solid 1px;
                             background   : #eeeeee;
+                            align-items: center;
                         }
                     }
                     .song-duration {
@@ -368,20 +383,26 @@
             }
         }
 
+        &:has(.artwork-col:hover){
+            .tab-toggles{
+                opacity: 0.9;
+                transition: opacity 0.2s 0s var(--appleEase);
+            }
+        }
+
         .tab-toggles{
             flex-wrap: wrap;
             align-content: center;
             justify-content: space-between;
             bottom: 210px;
-            left: 230px;
+            left: calc(50vw - 250px);
             width: 500px;
             z-index: 15;
             opacity: 0;
             transition: opacity 0.2s 2.5s var(--appleEase);
 
-            &:hover{
-                opacity: 0.9;
-                transition: opacity 0.2s 0s var(--appleEase);
+            &:has(.active){
+                left: calc(25vw - 250px);
             }
 
             .lyrics,
