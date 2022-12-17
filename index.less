@@ -23,15 +23,17 @@
             .lyric-body{
                 margin-top: -50px;
                 padding-block-start: 130px;
-                padding-block-end: 950px;
+                padding-block-end: 90vh;
                 margin-left: -5px;
                 margin-right: -5px;
-                -webkit-mask-image: linear-gradient(to bottom,transparent 0%, black 15%,black 50%,transparent 105%);
+                -webkit-mask-image: linear-gradient(to bottom,transparent 0%, black 13%,black 33%,transparent 100%);
             }
             .lyric-line {
                 margin-block: 10px;
                 transform: scale(1);
-                font-size: 26px;
+                font-size: 25px;
+                word-break: keep-all;
+                word-wrap: normal;
 
                 .lyricWaiting{
                     margin-block: 0px !important;
@@ -53,10 +55,16 @@
                     transition      : all 0.5s var(--appleEase);
                     padding-block: 5px;
                 }
+
                 &.unsynced{
-                    font-size: 20px;
+                    opacity: 1;
+                    font-size: 18px;
                     padding-block: 0px;
+                    margin-block: 3px;
                     cursor: default;
+                    &::after{
+                        background: none;
+                    }
                 }
             }
         }
@@ -91,19 +99,26 @@
 .fullscreen-view-container{
     .fullscreen-view{
         .lyrics-col{
-            width:80%;
+            width:90%;
             margin-top: 90px;
+            &:has(.unsynced){
+                margin-top: 0px;
+                .lyric-body{
+                    -webkit-mask-image: linear-gradient(to bottom, transparent 0%,black 10%, black 90%,transparent 100%);
+                }
+            }
             .lyric-body{
                 width: 100%;
                 height: 115%;
                 padding-block-start: 150px;
                 padding-block-end: 550px;
-                -webkit-mask-image: linear-gradient(to bottom, transparent 13%,black 17%, black 40%,transparent 100%);
+                -webkit-mask-image: linear-gradient(to bottom, transparent 13%,black 17%, black 35%,transparent 100%);
             }
-            // &:hover{
+            // &:has(.lyric-body:hover){
             //     filter: none;
             //     margin-top: -200px;
-            //     transition: none;
+            //     transition: none !important;
+            //     scroll-behavior: none !important;
             //     .lyric-body{
             //         -webkit-mask-image: none !important;
             //         height: 157%;
@@ -112,6 +127,7 @@
             //     .lyric-line{
             //         margin-block: 0px;
             //         padding-block: 20px;
+            //         transition: none !important;
             //     }
             // }
         }
@@ -141,14 +157,18 @@
 
             &.active{
                 filter: none;
-                opacity: 1;
                 transition: all 0.5s var(--appleEase);
                 padding-block: 10px;
+                opacity: 1;
             }
 
             &.unsynced{
                 font-size: 40px;
                 padding-block: 0px;
+                cursor: default;
+                &::after{
+                    background: none;
+                }
             }
         }
     }
@@ -220,6 +240,12 @@
         }
 
         .right-col {
+            &:has(.no-lyrics){
+                position: absolute;
+                opacity: 0;
+                z-index: -1;
+                pointer-events: none;
+            }
             .queue-col {
                 margin-right: 2rem;
                 color       : var(--textColorLight);
@@ -297,19 +323,19 @@
                 &:hover {
                     :not(.song-name):not(.song-artist) {
                         opacity   : 1;
-                        transition: opacity 0.2s var(--appleEase);
+                        transition: opacity 0.1s var(--appleEase);
                     }
                     .song-name, .song-artist{
                         opacity: 0;
-                        transition: opacity 0.2s var(--appleEase);
+                        transition: opacity 0.1s var(--appleEase);
                     }
                     .song-progress>.song-duration{
                         opacity: 0.8 !important;
-                        transition: opacity 0.2s var(--appleEase);
-                    }
+                        transition: opacity 0.1s var(--appleEase);
+                    }   
                     .song-progress>input[type="range"]::-webkit-slider-thumb{
                         opacity: 1;
-                        transition: opacity 0.2s var(--appleEase);
+                        transition: opacity 0.1s var(--appleEase);
                         height       : 14px;
                     }
                 }
@@ -319,18 +345,17 @@
                     transition: opacity 0.2s 2.5s var(--appleEase);
                     font-size    : 15px;
                     color        : var(--textColorLight);
-                    margin-top: 10px;
                     max-width: 400px;
                     -webkit-line-clamp: 1;
                     overflow: hidden;
                     -webkit-box-orient: vertical;
-                    display: 'webkit-box';
+                    display: -webkit-box;
                 }
 
                 .song-artist {
                     opacity  : 0.8;
                     transition: opacity 0.2s 2.5s var(--appleEase);
-                    font-size: 14px;
+                    font-size: 15px;
                     color    : var(--textColorLight);
                     max-width: 400px;
                 }
@@ -386,7 +411,18 @@
         &:has(.artwork-col:hover){
             .tab-toggles{
                 opacity: 0.9;
-                transition: opacity 0.2s 0s var(--appleEase);
+                transition: opacity 0.1s 0s var(--appleEase);
+            }
+        }
+        &:has(.no-lyrics){
+            .tab-toggles{
+                left: calc(50vw - 250px) !important;
+                .lyrics{
+                    &.active{
+                        background-color: transparent !important;
+                        filter          : brightness(1.5) !important;
+                    }
+                }
             }
         }
 
@@ -394,7 +430,7 @@
             flex-wrap: wrap;
             align-content: center;
             justify-content: space-between;
-            bottom: 210px;
+            bottom: calc(25vh - 60px);
             left: calc(50vw - 250px);
             width: 500px;
             z-index: 15;
@@ -426,18 +462,22 @@
 
 .fullscreen-view .background .bgArtworkMaterial .bg-artwork-container .bg-artwork{
     filter: brightness(65%) blur(150px) saturate(280%) contrast(1.5) opacity(0.8);
+    // filter: none !important;
+}
+.fullscreen-view .background .bgArtworkMaterial .bg-artwork-container{
+    // filter: brightness(70%) blur(150px) saturate(280%) contrast(1.5) opacity(0.8);    
 }
 
 .fullscreen-view .background .bgArtworkMaterial .bg-artwork-container .bg-artwork.a{
     animation-delay: 0s;
     animation-duration: 35s;
     animation-direction: alternate;
+    animation-timing-function: ease-out;
 }
 .fullscreen-view .background .bgArtworkMaterial .bg-artwork-container .bg-artwork.b{
     animation-delay: 0s;
     animation-duration: 60s;
 }
-
 
 .app-drawer .bgArtworkMaterial .bg-artwork-container .bg-artwork{
     filter: brightness(65%) blur(150px) saturate(280%) contrast(1.5) opacity(0.8);
